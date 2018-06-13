@@ -23,18 +23,6 @@ class ViewController: UIViewController {
         segueToNextViewContoller()
     }
     
-    func createPDF(fileName:String)-> String {
-        let data = NSMutableData()
-        UIGraphicsBeginPDFContextToData(data, view.layer.bounds, nil)
-        UIGraphicsBeginPDFPage()
-        self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        UIGraphicsEndPDFContext()
-        let path = NSTemporaryDirectory() + "\(fileName).pdf"
-        data.write(toFile: path, atomically: true)
-        print(path)
-        return path
-    }
-    
     func segueToNextViewContoller() {
         let myVc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         myVc.filePath = createPdfFromTableView(fileName: "Cam")
@@ -54,6 +42,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func createPdfFromTableView(fileName:String)-> String {
+        // need to un check "clip to bounds"
         let priorBounds: CGRect = self.tableView.bounds
         let fittedSize: CGSize = self.tableView.sizeThatFits(CGSize(width: priorBounds.size.width, height: self.tableView.contentSize.height))
         self.tableView.bounds = CGRect(x: 0, y: 0, width: fittedSize.width, height: fittedSize.height)
