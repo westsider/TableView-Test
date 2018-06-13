@@ -32,6 +32,10 @@ class ViewController: UIViewController {
         contacts.append( Person(title: "1 Primes Zeiss Master Primes", detail: "12mm, 18mm, 21mm, 35mm, 50mm, 85mm, 100mm, 135mm, 150mm, 200mm, ") )
         contacts.append( Person(title: "1 Primes Zeiss Master Primes", detail: "12mm, 18mm, 21mm, 35mm, 50mm, 85mm, 100mm, 135mm, 150mm, 200mm, ") )
         contacts.append( Person(title: "1 Primes Zeiss Master Primes", detail: "12mm, 18mm, 21mm, 35mm, 50mm, 85mm, 100mm, 135mm, 150mm, 200mm, ") )
+        
+        contacts.append( Person(title: "Weather Report", detail: "1/2   71' - 92'   Partly Cloud\n1/2   71' - 92'   Partly Cloud\n1/2   71' - 92'   Partly Cloud\n1/2   71' - 92'   Partly Cloud\n1/2   71' - 92'   Partly Cloud") )
+    
+
     }
 
     @IBAction func savePDF(_ sender: Any) {
